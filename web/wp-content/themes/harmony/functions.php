@@ -6,9 +6,9 @@ define('HOME_URL', get_home_url());
 define('AJAX_URL', admin_url('admin-ajax.php'));
 
 if (ENV_PROD) {
-    define('GTAG_KEY', get_field('params_ga_code', 'option'));
+    define('GTAG_KEY', '');
 } else {
-    define('GTAG_KEY', 'AIzaSyCvSv4RSBSEL6zCfuA6XIsMMcQA0cxgBno');
+    define('GTAG_KEY', '');
 }
 
 if(!ENV_LOCAL){
