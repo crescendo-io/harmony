@@ -15,6 +15,7 @@ if(!ENV_LOCAL){
     define('ACF_LITE' , true);
 }
 
+
 require_once (__DIR__ . '/inc/datatypes.php');
 require_once (__DIR__ . '/inc/configuration.php');
 require_once (__DIR__ . '/inc/configuration_security.php');

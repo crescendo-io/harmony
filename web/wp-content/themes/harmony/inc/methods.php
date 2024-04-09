@@ -16,38 +16,41 @@ function dateMonthInFr($date) {
     return str_replace($english_months, $french_months,  $date);
 }
 
-function lsdDebugBloc($folder = '', $slug, $name, $args = '') {
-    $datasDebug['path'] = 'template-parts/'. $folder . '/' .  $slug .'-'.$name.'.php';
-    $datasDebug['args'] = $args;
-    return $datasDebug;
-}
 
-function lsdGetTemplatePart($folder = '', $slug, $name, $args = '') {
-    if (is_plugin_active('lsd-debug-template-part/index.php')) {
-        if (LSD_DEBUG === true) {
-            $lsdDebugBloc = lsdDebugBloc($folder, $slug, $name, $args);
-        }
-    }
+
+function lsdGetTemplatePart($folder = '', $slug='', $name='', $args = '') {
 
     if (!empty($args)) {
         set_query_var('args', $args);
     }
 
-    if (isset($lsdDebugBloc)) {
-        echo '<div style="border: 1px solid red; padding: 10px">';
-        echo '<div style="padding-left: 5px; padding-top: 5px; font-size: 12px; font-weight: 800;">' . $lsdDebugBloc['path'] . '</div>';
+    get_template_part('template-parts/'. $folder . '/' .  $slug .'', $name, $args);
 
-        if ($lsdDebugBloc['args']) {
-            echo '<div style="padding-top: 5px; padding-left: 5px; font-size: 11px; font-weight: 100; color: green; ">Params :</div>';
-            foreach ($lsdDebugBloc['args'] as $key => $arg){
-                echo "<div style='padding-left: 5px; font-size: 10px;'>". $key . " : <span style='font-weight: 800;'>". $arg . "</span></div>";
-            }
+
+}
+
+
+// Attacher la fonction à l'initialisation de WordPress
+add_action('init', 'redirect_if_logged_in');
+
+// Fonction pour vérifier si l'utilisateur est connecté et effectuer une redirection
+function redirect_if_logged_in() {
+    // Vérifie si l'utilisateur est connecté
+
+    $post_id = url_to_postid($_SERVER['REQUEST_URI']);
+
+
+    if (!is_admin()) {
+        if (!is_user_logged_in() && $post_id != 28 && $post_id != 25) {
+            // Redirection vers une URL spécifique
+            wp_redirect(home_url('/login/')); // Remplacez '/dashboard' par l'URL vers laquelle vous souhaitez rediriger
+            exit;
+        }
+        if (is_user_logged_in() && $post_id == 28 || is_user_logged_in() && $post_id == 25) {
+            wp_redirect(home_url('/tasks/')); // Remplacez '/dashboard' par l'URL vers laquelle vous souhaitez rediriger
+            exit;
         }
     }
 
-    get_template_part('template-parts/'. $folder . '/' .  $slug .'', $name, $args);
-
-    if (isset($lsdDebugBloc)) {
-        echo '</div>';
-    }
 }
+

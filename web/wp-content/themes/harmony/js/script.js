@@ -55,4 +55,23 @@ jQuery(document).ready(function ($) {
     });
 
 
+    // Fake Select
+
+    $('.fake-select').click(function(){
+        $(this).toggleClass('open');
+    });
+
+    $(document).mouseup(function(e)
+    {
+        var container = $(".fake-select");
+
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!container.is(e.target) && container.has(e.target).length === 0)
+        {
+            $(".fake-select").removeClass('open');
+        }
+    });
+
+
+
 });
