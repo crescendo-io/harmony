@@ -65,3 +65,38 @@ function rgpd_callback() {
 
     wp_send_json($response);
 }
+
+
+
+function custom_login() {
+    // Vérifie si les données du formulaire sont envoyées
+    if (isset($_POST['action']) && $_POST['action'] == 'custom_login') {
+        // Récupère les données du formulaire
+        parse_str($_POST['formData'], $formData); // Convertit les données du formulaire en tableau associatif
+        $username = sanitize_text_field($formData['username']);
+        $password = $formData['password'];
+
+        // Tente de connecter l'utilisateur
+        $user = wp_signon(array(
+            'user_login'    => $username,
+            'user_password' => $password,
+            'remember'      => true,
+        ), false);
+
+        // Vérifie si la connexion a réussi
+        if (is_wp_error($user)) {
+            // Erreur de connexion
+            echo json_encode(array('success' => false, 'message' => 'Identifiant ou mot de passe incorrect.'));
+        } else {
+            // Connexion réussie
+            echo json_encode(array('success' => true, 'redirect' => home_url()));
+        }
+
+        // Arrête l'exécution du script
+        die();
+    }
+}
+
+// Ajoute la fonction à l'action "wp_ajax" pour les utilisateurs connectés et non connectés
+add_action('wp_ajax_custom_login', 'custom_login');
+add_action('wp_ajax_nopriv_custom_login', 'custom_login');
