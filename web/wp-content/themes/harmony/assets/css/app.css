@@ -702,6 +702,9 @@ a img.aligncenter {
     }
 }
 
+html {
+    font-family: "mabry_proregular";
+}
 @media (min-width: 768px) {
     html {
         font-size: 1vw;
@@ -716,6 +719,83 @@ body {
 
 a {
     color: var(--color-black);
+}
+
+* {
+    font-family: "mabry_proregular";
+    font-size: 18px;
+}
+
+html, body {
+    height: 100%;
+    background: #F7F7F7;
+}
+
+.gradient {
+    background: #f3a683;
+    background: linear-gradient(90deg, #f3a683 0%, #f7d794 28%, #778beb 52%, #e77f67 79%, #cf6a87 100%);
+    width: 100%;
+    height: 10px;
+}
+
+.container-form-login {
+    width: 100%;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+.container-form-login .forget-link {
+    margin-top: 30px;
+    display: block;
+    color: #858585;
+}
+.container-form-login button {
+    display: inline-block;
+    vertical-align: top;
+}
+.container-form-login img {
+    margin: 0 auto 40px;
+    width: 40%;
+    display: block;
+}
+.container-form-login .container-form {
+    background: #FFF;
+    padding: 60px 90px;
+}
+
+input {
+    width: 100%;
+    appearance: none;
+    background: #FFF;
+    border: 1px solid #E4E4E4;
+    margin-bottom: 15px;
+    font-size: 18px;
+    display: block;
+    padding: 15px;
+    border-radius: 3px;
+}
+input:invalid {
+    background: #FFF;
+}
+
+button {
+    background: #000;
+    color: #FFF;
+    border: 0;
+    font-size: 18px;
+    padding: 10px 30px 13px;
+    border-radius: 3px;
+}
+
+#login-message, #reset-password-message {
+    color: #000;
+    font-size: 16px;
+}
+#login-message .error, #reset-password-message .error {
+    color: #C44569;
 }
 
 /*@import 'components/';*/

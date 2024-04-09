@@ -97,7 +97,7 @@ $table_prefix  = 'lsd_';
  */
 
 define('WP_DEBUG', true);
-define('WP_DEBUG_DISPLAY', ENV_LOCAL);
+define('WP_DEBUG_DISPLAY', true);
 define('WP_DEBUG_LOG', !ENV_LOCAL);
 
 if (ENV_LOCAL) {

@@ -1,4 +1,6 @@
 html {
+    font-family: "mabry_proregular";
+
     @media #{$breakpoint-md-up} {
         font-size: 1vw;
     }

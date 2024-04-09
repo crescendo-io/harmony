@@ -56,9 +56,22 @@
     <meta name="twitter:title" content="<?php wp_title(''); ?>">
     <meta name="twitter:description" content="<?php bloginfo('description'); ?>">
     <meta name="twitter:image" content="<?php echo get_template_directory_uri(); ?>/assets/img/twitter.jpg">
+
+    <style type="text/css">
+        @font-face {
+            font-family: 'mabry_proregular';
+            src: url('<?= get_template_directory_uri();?>/assets/fonts/mabrypro-regular-webfont.woff2') format('woff2'),
+            url('<?= get_template_directory_uri();?>/assets/fonts/mabrypro-regular-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+
+        }
+    </style>
+
     
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> data-module="bugReport">
 
+<div class="gradient"></div>
