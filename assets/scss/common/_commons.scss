@@ -244,22 +244,35 @@ button{
   thead{
     text-transform: uppercase;
 
+    tr{
+      &:hover{
+        background-color: transparent;
+      }
+    }
     td{
       font-family: "Roboto", sans-serif;
       font-weight: 800;
       color: #747474 !important;
       font-size: 16px;
+      cursor: auto;
       padding-bottom: 20px;
     }
   }
 
   tr{
     border-bottom: 1px solid #EAEAEA;
+
+    &.loaded{
+      &:hover{
+        background-color: #F9F9F9;
+      }
+    }
   }
 
   td{
     padding-top: 15px;
     padding-bottom: 15px;
+    cursor: pointer;
     vertical-align: middle;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
@@ -336,4 +349,156 @@ button{
 @keyframes slidein {
   from { left: 0; }
   to   { left: 100%; }
+}
+
+
+.popin-right{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(#000,.5);
+
+  .view{
+    width: 50%;
+    height: 100%;
+    background-color: #FFF;
+    right: 0;
+    min-width: 1000px;
+    position: absolute;
+    padding: 2vw;
+
+    .popin-title{
+      font-size: 1.5vw;
+    }
+  }
+
+  .description-ticket{
+    margin-top: 40px;
+    padding-left: 40px;
+    position: relative;
+
+    &:before{
+      content: '';
+      width: 15px;
+      height: 100%;
+      background: #F7F7F7;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .ticket-info{
+    margin-top: 20px;
+    div{
+      color: #888;
+    }
+  }
+
+
+  .medias{
+    li{
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .delete{
+    vertical-align: middle;
+    padding-top: 20px;
+    display: block;
+    color: #B72B2B;
+    &:before{
+      content: '';
+      width: 18px;
+      vertical-align: middle;
+      position: relative;
+      display: inline-block;
+      height: 18px;
+      background: url('../img/trash.svg');
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.button-validate{
+  background: transparent;
+  padding: 0;
+  width: 100%;
+  svg{
+    width: 100%;
+    height: auto;
+    path{
+      fill: #888;
+    }
+    circle{
+      stroke: #888;
+    }
+  }
+
+  &:hover{
+    svg{
+      path{
+        fill: #1BA932;
+      }
+      circle{
+        stroke: #1BA932;
+      }
+    }
+  }
+}
+.button-cross{
+  width: 3vw;
+  display: inline-block;
+  height: 3vw;
+  background: url('../img/cross.svg');
+  background-size:  contain;
+  background-repeat: no-repeat;
+}
+
+.title-border-top{
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #EAEAEA;
+  font-weight: 800;
+}
+
+form.comment{
+  select{
+    appearance: none;
+    border: 1px solid #E4E4E4;
+    display: inline-block;
+    width: 400px;
+    text-align: left;
+    position: relative;
+    cursor: pointer;
+    background: url('../img/dropdown.svg');
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    margin-left: 15px;
+    padding: 15px;
+  }
+
+  label{
+    margin-bottom: 30px;
+  }
 }

@@ -60,3 +60,16 @@ function scripts_site(){
         wp_localize_script('script-js', 'ParamsData', $dataToBePassed);
     }
 }
+
+function custom_wysiwyg_editor_shortcode() {
+    ob_start();
+    wp_editor('', 'custom_wysiwyg_editor', array(
+        'textarea_name' => 'custom_wysiwyg_editor_content',
+        'editor_class'  => 'custom-wysiwyg-editor-class',
+        'media_buttons' => true,
+        'textarea_rows' => 10,
+        'teeny'         => false,
+        'tinymce'       => true
+    ));
+    return ob_get_clean();
+}
