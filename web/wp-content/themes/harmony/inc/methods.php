@@ -40,14 +40,14 @@ function redirect_if_logged_in() {
     $post_id = url_to_postid($_SERVER['REQUEST_URI']);
 
 
-    if (!is_admin()) {
+    if (!is_admin() && !is_login()) {
         if (!is_user_logged_in() && $post_id != 28 && $post_id != 25) {
             // Redirection vers une URL spécifique
             wp_redirect(home_url('/login/')); // Remplacez '/dashboard' par l'URL vers laquelle vous souhaitez rediriger
             exit;
         }
         if (is_user_logged_in() && $post_id == 28 || is_user_logged_in() && $post_id == 25) {
-            wp_redirect(home_url('/tasks/')); // Remplacez '/dashboard' par l'URL vers laquelle vous souhaitez rediriger
+            wp_redirect(home_url('/')); // Remplacez '/dashboard' par l'URL vers laquelle vous souhaitez rediriger
             exit;
         }
     }
