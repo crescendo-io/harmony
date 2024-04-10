@@ -84,6 +84,10 @@ get_header();
                 <div class="page-title">
                     Tâches
                 </div>
+
+                <form action="" id="search-task">
+                    <input type="text" placeholder="Rechercher une tâche">
+                </form>
             </div>
 
             <div class="col-sm-6 text-right">
@@ -100,14 +104,12 @@ get_header();
                 <table class="table-task">
                     <thead>
                         <td>
-                           Ref
+                            Créateur
                         </td>
                         <td>
                             Titre de la tâche
                         </td>
-                        <td>
-                            Créateur
-                        </td>
+
                         <td>
                             Priorité
                         </td>
@@ -119,420 +121,63 @@ get_header();
                         </td>
                     </thead>
 
-                    <tr>
-                        <td>
-                            12354
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            12354
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            12354
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            12354
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            12354
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            12354
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8945
-                        </td>
-                        <td>
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                            Créer une entrée pour la navigation principale
-                        </td>
-                        <td>
-                            <div class="user-initials">
-                                BV
-                            </div>
-                        </td>
-                        <td>
-                            Urgent
-                        </td>
-                        <td>
-                            13/03/2024
-                        </td>
-                        <td class="text-right">
-                            En attente
-                        </td>
-                    </tr>
+
+                    <?php
+                    $text = 'Créer une entrée pour la navigation principale
+                               Créer une entrée pour la navigation principale
+                               Créer une entrée pour la navigation principale';
+
+                    $i = 0; while ($i < 15): ?>
+                        <tr class="load">
+                            <td>
+                                <div class="user-initials load">
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="loader-text"></div>
+                            </td>
+                            <td>
+                                <div class="loader-text"></div>
+                            </td>
+                            <td>
+                                <div class="loader-text"></div>
+                            </td>
+                            <td class="text-right">
+                                <div class="loader-text"></div>
+                            </td>
+                        </tr>
+                        <?php $i++; endwhile; ?>
+
+
+
+                   <?php
+                   $text = 'Créer une entrée pour la navigation principale
+                               Créer une entrée pour la navigation principale
+                               Créer une entrée pour la navigation principale';
+
+                   $i = 0; while ($i < 15): ?>
+                       <tr class="loaded">
+                           <td>
+                               <div class="user-initials">
+                                   BV
+                               </div>
+                           </td>
+                           <td>
+                               <?= substr($text, 0, 140); ?>...
+                           </td>
+                           <td>
+                               Urgent
+                           </td>
+                           <td>
+                               13/03/2024
+                           </td>
+                           <td class="text-right">
+                               En attente
+                           </td>
+                       </tr>
+                    <?php $i++; endwhile; ?>
+
                 </table>
             </div>
         </div>

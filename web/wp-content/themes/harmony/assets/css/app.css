@@ -873,6 +873,9 @@ button {
     padding-top: 2vw;
     font-size: 25px;
 }
+.content #search-task {
+    margin-top: 15px;
+}
 
 .fake-select {
     border: 1px solid #E4E4E4;
@@ -951,9 +954,11 @@ button {
     border-bottom: 1px solid #EAEAEA;
 }
 .table-task td {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     vertical-align: middle;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
 }
 .table-task td:nth-child(1) {
     width: 5%;
@@ -981,6 +986,28 @@ button {
     padding-right: 30px;
 }
 
+.loader-text {
+    width: 100%;
+    height: 16px;
+    background: #f7f7f7;
+    position: relative;
+}
+.loader-text:before {
+    content: "";
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, white 22%, rgba(255, 255, 255, 0) 100%);
+    animation: 0.5s linear infinite slidein;
+}
+
+.loaded {
+    display: none;
+}
+
 .user-initials {
     width: 2vw;
     height: 2vw;
@@ -994,7 +1021,18 @@ button {
     font-weight: 800;
     display: inline-block;
 }
+.user-initials.load {
+    background-color: #F7F7F7;
+}
 
+@keyframes slidein {
+    from {
+        left: 0;
+    }
+    to {
+        left: 100%;
+    }
+}
 /*@import 'components/';*/
 /*@import 'pages/';*/
 

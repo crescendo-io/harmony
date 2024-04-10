@@ -73,5 +73,13 @@ jQuery(document).ready(function ($) {
     });
 
 
+    // Loader
+
+    setTimeout(function(){
+        $('.load').fadeOut(0);
+        $('.loaded').fadeIn(500);
+    }, 2000);
+
+
 
 });
