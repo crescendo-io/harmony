@@ -33,6 +33,49 @@ function lsdGetTemplatePart($folder = '', $slug='', $name='', $args = '') {
 // Attacher la fonction à l'initialisation de WordPress
 add_action('init', 'redirect_if_logged_in');
 
+
+// Authorized projects
+
+function get_authorized_projects() {
+    $currentUser = get_current_user_id();
+    $authProjects = get_field('user_projects', 'user_' . get_current_user_id());
+
+    return $authProjects;
+}
+
+function redirect_to_authorized_project(){
+    if (is_user_logged_in() && !isset($_GET['project'])) {
+
+        $authProjects = get_authorized_projects();
+
+        if($authProjects){
+            $authProject = reset($authProjects);
+            wp_redirect(home_url('/?project=' . $authProject)); // Remplacez '/dashboard' par l'URL vers laquelle vous souhaitez rediriger
+            exit;
+        }else{
+            die('Aucun projet attribué pour le moment');
+        }
+    }
+
+    if (is_user_logged_in() && isset($_GET['project'])) {
+        $projectCurrent = filter_input( INPUT_GET, 'project', FILTER_SANITIZE_STRING );
+
+        if(!get_authorized_projects()){
+            die('Aucun projet attribué pour le moment 2');
+        }
+        elseif(!in_array($projectCurrent, get_authorized_projects())){
+            $authProjects = get_authorized_projects();
+
+            if($authProjects){
+                $authProject = reset($authProjects);
+                wp_redirect(home_url('/?project=' . $authProject)); // Remplacez '/dashboard' par l'URL vers laquelle vous souhaitez rediriger
+                exit;
+            }
+        }
+    }
+}
+
+
 // Fonction pour vérifier si l'utilisateur est connecté et effectuer une redirection
 function redirect_if_logged_in() {
     // Vérifie si l'utilisateur est connecté
@@ -50,7 +93,13 @@ function redirect_if_logged_in() {
             wp_redirect(home_url('/')); // Remplacez '/dashboard' par l'URL vers laquelle vous souhaitez rediriger
             exit;
         }
+        redirect_to_authorized_project();
     }
-
 }
 
+function get_current_project(){
+    redirect_to_authorized_project();
+    $projectCurrent = filter_input( INPUT_GET, 'project', FILTER_SANITIZE_STRING );
+
+    return $projectCurrent;
+}

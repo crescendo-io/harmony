@@ -31,3 +31,33 @@ function create_tickets_post_type() {
     register_post_type( 'tickets', $args );
 }
 add_action( 'init', 'create_tickets_post_type' );
+
+// Fonction pour enregistrer la taxonomie
+function custom_taxonomy() {
+    $labels = array(
+        'name'                       => _x( 'Projets', 'taxonomy general name' ),
+        'singular_name'              => _x( 'Projet', 'taxonomy singular name' ),
+        'search_items'               => __( 'Rechercher un projet' ),
+        'all_items'                  => __( 'Tous les projets' ),
+        'parent_item'                => __( 'Projet parent' ),
+        'parent_item_colon'          => __( 'Projet parent :' ),
+        'edit_item'                  => __( 'Modifier le projet' ),
+        'update_item'                => __( 'Mettre à jour le projet' ),
+        'add_new_item'               => __( 'Ajouter un nouveau projet' ),
+        'new_item_name'              => __( 'Nouveau nom de projet' ),
+        'menu_name'                  => __( 'Projets' ),
+    );
+
+    $args = array(
+        'hierarchical'          => true, // La taxonomie est hiérarchique, comme les catégories par défaut
+        'labels'                => $labels,
+        'show_ui'               => true,
+        'show_admin_column'     => true,
+        'query_var'             => true,
+        'rewrite'               => array( 'slug' => 'projets' ), // Slug pour l'URL
+    );
+
+    // Enregistrement de la taxonomie pour le type de publication "tache"
+    register_taxonomy( 'projets', 'tickets', $args );
+}
+add_action( 'init', 'custom_taxonomy' );
