@@ -74,11 +74,37 @@ jQuery(document).ready(function ($) {
 
 
     // Loader
-
     setTimeout(function(){
         $('.load').fadeOut(0);
         $('.loaded').fadeIn(500);
     }, 2000);
+
+    // Popin
+
+    $('.table-task tr').click(function(event){
+        event.preventDefault();
+        $('#popin-create').fadeIn(200);
+    });
+
+    $('.button-cross').click(function(){
+        $('.popin').fadeOut(200);
+    });
+
+    $('.button-add-task.intro-button').click(function(event){
+        event.preventDefault();
+       $('#popin-create-ticket').fadeIn(200);
+    });
+
+    $(document).mouseup(function(e)
+    {
+        var container = $(".popin .view");
+
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!container.is(e.target) && container.has(e.target).length === 0)
+        {
+            $(".popin").fadeOut(200);
+        }
+    });
 
 
 

@@ -186,7 +186,7 @@ get_header();
 
 
 
-<div class="popin-right">
+<div class="popin-right hidden popin" id="popin-create">
     <div class="view">
         <div class="head">
             <div class="container-fluid">
@@ -292,12 +292,78 @@ get_header();
                             wp_editor('', 'custom_wysiwyg_editor', array(
                                 'textarea_name' => 'custom_wysiwyg_editor_content',
                                 'editor_class'  => 'custom-wysiwyg-editor-class',
-                                'media_buttons' => true,
+                                'media_buttons' => false,
                                 'textarea_rows' => 10,
                                 'teeny'         => false,
                                 'tinymce'       => true
                             ));
                             ?>
+                            <a href="" class="button-add-task intro-button">
+                                Créer une tâche
+                                <span>+</span>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="popin-center popin" id="popin-create-ticket">
+    <div class="view">
+        <div class="head">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-sm-11">
+                        <div class="popin-title">
+                            Création d'une tâche
+                        </div>
+                    </div>
+                    <div class="col-sm-1 text-right">
+                        <button class="button-cross"></button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form action="" class="comment create">
+                            <label for="">
+                                <input type="text" placeholder="Titre de la tâche">
+                            </label>
+                            <label for="">
+                                <div>Priorité</div>
+                                <select id="comment-priority" name="comment_priority">
+                                    <option value="Low">Faible</option>
+                                    <option value="Medium">Moyenne</option>
+                                    <option value="High">Haute</option>
+                                </select>
+                            </label>
+
+                            <p>
+                                <label for="comment-media">Médias :
+                                <input type="file" id="comment-media" name="comment_media[]" multiple>
+                                </label>
+                            </p>
+
+
+                            <?php
+                            // Afficher l'éditeur WYSIWYG
+                            wp_editor('', 'custom_wysiwyg_editor', array(
+                                'textarea_name' => 'custom_wysiwyg_editor_content_create',
+                                'editor_class'  => 'custom-wysiwyg-editor-class',
+                                'media_buttons' => false,
+                                'textarea_rows' => 10,
+                                'teeny'         => false,
+                                'tinymce'       => true
+                            ));
+                            ?>
+                            <a href="" class="button-add-task intro-button">
+                                Créer une tâche
+                                <span>+</span>
+                            </a>
                         </form>
                     </div>
                 </div>

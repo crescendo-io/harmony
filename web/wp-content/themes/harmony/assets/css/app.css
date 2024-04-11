@@ -865,6 +865,12 @@ button {
     padding-bottom: 40px;
     border-bottom: 1px solid #EAEAEA;
 }
+.content .hero .fake-select {
+    position: absolute;
+    right: 2vw;
+    z-index: 20;
+    background: #FFF;
+}
 .content .hero .current-project {
     font-size: 2.7vw;
     letter-spacing: -0.08vw;
@@ -1041,12 +1047,17 @@ button {
         left: 100%;
     }
 }
+.hidden {
+    display: none;
+}
+
 .popin-right {
     position: fixed;
     width: 100%;
     left: 0;
     right: 0;
     top: 0;
+    z-index: 22;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -1054,6 +1065,7 @@ button {
     width: 50%;
     height: 100%;
     background-color: #FFF;
+    overflow: auto;
     right: 0;
     min-width: 1000px;
     position: absolute;
@@ -1173,7 +1185,48 @@ form.comment select {
     padding: 15px;
 }
 form.comment label {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+.popin-center {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: none;
+    z-index: 22;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.popin-center form.create {
+    margin-top: 30px;
+}
+.popin-center form.create label {
+    display: block;
+}
+.popin-center form.create label div {
+    margin-bottom: 10px;
+}
+.popin-center form.create input, .popin-center form.create select {
+    width: 100%;
+    margin-left: 0;
+}
+.popin-center .view {
+    width: 50%;
+    max-height: 100%;
+    height: auto;
+    top: 50%;
+    background-color: #FFF;
+    overflow: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 1000px;
+    position: absolute;
+    padding: 2vw;
+}
+.popin-center .view .popin-title {
+    font-size: 1.5vw;
 }
 
 /*@import 'components/';*/
